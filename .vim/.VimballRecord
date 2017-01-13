@@ -1,1 +1,0 @@
-screen.vba: call delete('/Users/cdkkim/.vim/autoload/screen.vim')|call delete('/Users/cdkkim/.vim/doc/screen.txt')|call delete('/Users/cdkkim/.vim/plugin/screen.vim')
