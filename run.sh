@@ -1,4 +1,4 @@
-mv ./dot-files/vimrc ~/.vimrc
-mv ./dot-files/.tmux.conf ~/
-mv ./dot-files/.bashrc ~/.bashrc
-mv ./dot-files/.vim ~/
+cp ./dot-files/vimrc ~/.vimrc
+cp ./dot-files/.tmux.conf ~/
+cp ./dot-files/bashrc ~/.bashrc
+cp ./dot-files/vim ~/.vim
