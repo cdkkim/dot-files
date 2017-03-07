@@ -17,6 +17,12 @@ alias tpls="cd ~/app/utils/scripts"
 alias lsdr="ls -d -- */"
 alias jcon="jupyter console"
 alias calebabc="cd /Volumes/sdcard/calebabc"
+alias mesh="cd ~/workspace/meshkorea"
+alias pms="cd ~/workspace/meshkorea/prime-main-server"
+
+# docker shortcuts
+alias di="docker images"
+alias ds="docker ps"
 
 # tmux short-cuts
 alias tlist="tmux list-sessions"
@@ -71,3 +77,4 @@ alias stop-pg='pg_ctl stop -m fast'
 
 #ctags
 alias ct="ctags -R -f ./.git/tags ."
+

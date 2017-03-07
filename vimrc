@@ -20,13 +20,18 @@ Plugin 'wincent/command-t'
 
 " Color themes
 Plugin 'chriskempson/vim-tomorrow-theme'
+"Plugin 'altercation/vim-colors-solarized'
+Plugin 'w0ng/vim-hybrid'
 
 call vundle#end()
 filetype plugin indent on
 
 syntax enable
 colorscheme tomorrow-night
+au BufReadPost,BufNewFile *.java colorscheme hybrid
 set t_Co=256
+let g:solarized_termcolors=256
+
 " change cursor in insert mode
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
@@ -44,7 +49,8 @@ set hlsearch
 set incsearch
 set ignorecase "make search case insensitive
 set smartcase
-set autoindent
+"set autoindent
+set cindent
 set colorcolumn=+1
 set mouse=a "enable mouse whell
 set cursorline
@@ -113,9 +119,10 @@ let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 
 " emmet config
 let g:user_emmet_install_global=0
-autocmd FileType html,css EmmetInstall
+autocmd FileType html,css,xml,php,js EmmetInstall
 let g:user_emmet_leader_key='<C-e>'
 "imap <C-e> :call emmet#expandAbbr(3,"")
+"usage: ctrl+e ,
 
 
 set tags=./tags,tags

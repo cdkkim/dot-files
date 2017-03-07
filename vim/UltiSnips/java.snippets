@@ -7,6 +7,21 @@ priority -50
 # looks, it is defaulted to junit4, setting this option to 3 will remove the
 # @Test annotation from the method
 
+
+############
+## CUSTOM ##
+############
+
+snippet /// "block comment" b
+/**
+ * ${1}
+*/$0
+endsnippet
+
+
+
+############
+
 global !p
 def junit(snip):
 	if snip.opt("g:ultisnips_java_junit", "") == "3":
@@ -316,7 +331,7 @@ ${1:private} ${2:void} ${3:method}($4) ${5:throws $6 }{
 endsnippet
 
 snippet m  "method" b
-${1:private} ${2:void} ${3:method}($4) {
+${1:public} ${2:void} ${3:method}($4) {
 	$0
 }
 endsnippet
