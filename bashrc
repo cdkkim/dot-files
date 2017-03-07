@@ -37,8 +37,7 @@ alias djm='python manage.py'
 #alias sudo='sudo env PATH=$PATH'
 
 # AWS Acount
-export AWS_ACCESS_KEY_ID=AKIAIRFMPRY47YLITUUQ
-export AWS_SECRET_ACCESS_KEY=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
+source ~/.aws/awscredentials
 
 # The next line updates PATH for the Google Cloud SDK.
 #source /Users/cdkkim/google-cloud-sdk/path.bash.inc

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export PS1="[\w]\$(parse_git_branch) $ "
+export PS1="\[\e[1;30m\][\w]\e[m\]\[\e[0;32m\$(parse_git_branch)\e[m\] \[\e[1;30m$\e[m\] "
 export HOME=/Users/cdkkim
 
 export WORKON_HOME="$HOME/.virtualenvs"
@@ -16,8 +16,7 @@ export RABBITMQ_HOME=/usr/local/Cellar/rabbitmq/3.3.1
 export MAHOUT_HOME=/usr/local/mahout-distribution-0.9
 export SCALA_HOME=/usr/local/share/scala-2.11.2
 #export PYTHONPATH=/usr/local/lib/python2.7/site-packages
-export PYTHONPATH=$HOME/anaconda/lib/python3.5/site-packages
-export SPARK_HOME=/usr/local/spark-2.0.2
+export PYTHONPATH=$HOME/anaconda/lib/python3.5/site-packages export SPARK_HOME=/usr/local/spark-2.0.2
 export GRADLE_HOME=/usr/local/gradle-2.12
 export PLAY2_HOME=$HOME/app/activator-1.3.7
 export STORM_HOME=/usr/local/storm
