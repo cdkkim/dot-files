@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export PS1="[\w] $ "
+export PS1="[\w]\$(parse_git_branch) $ "
 export HOME=/Users/cdkkim
 
 export WORKON_HOME="$HOME/.virtualenvs"
@@ -56,9 +56,16 @@ fi
 # set the DYLD_FALLBACK_LIBRARY_PATH to include the anaconda libraries
 export DYLD_FALLBACK_LIBRARY_PATH=$HOME/anaconda3/lib/:$DYLD_FALLBACK_LIBRARY_PATH
 
+export DYLD_LIBRARY_PATH=/usr/local/bin/mecab-java
+
 ### Added by the Heroku Toolbelt
 #export PATH="/usr/local/heroku/bin:$PATH"
 
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
