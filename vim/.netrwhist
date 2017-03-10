@@ -1,3 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/Users/cdkkim/dot-files/.vim'
+let g:netrw_dirhist_2='/Users/kyeongohkim/dot-files/vim/bundle/command-t/ruby/command-t'
+let g:netrw_dirhist_3='/Users/kyeongohkim/workspace/prime-main-server'
+let g:netrw_dirhist_4='/Users/kyeongohkim/dot-files/vim/bundle/command-t'
+let g:netrw_dirhist_5='/Users/kyeongohkim/dot-files'
+let g:netrw_dirhist_6='/Users/kyeongohkim/workspace/prime-main-server/app/Http/Controllers'
