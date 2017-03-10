@@ -9,6 +9,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-rvm'
 
 " Syntax
 Plugin 'derekwyatt/vim-scala'
@@ -146,3 +147,4 @@ let g:returnApp="iTerm"
 " YCM
 let g:ycm_keep_logfiles = 1
 let g:ycm_log_level = 'debug'
+
