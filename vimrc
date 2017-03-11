@@ -119,7 +119,7 @@ let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 
 " emmet config
 let g:user_emmet_install_global=0
-autocmd FileType html,css,xml,php,js EmmetInstall
+autocmd FileType html,css,xml,php,js,jsx EmmetInstall
 let g:user_emmet_leader_key='<C-e>'
 "imap <C-e> :call emmet#expandAbbr(3,"")
 "usage: ctrl+e ,

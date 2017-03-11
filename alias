@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+alias cax="cd /Volumes/sdcard/app/crowdanalytix"
+alias kaggle="cd /Volumes/sdcard/app/kaggle"
+alias cdtex="cd /Volumes/sdcard/tex/"
+alias sdd="cd /Volumes/sdcard/"
+alias tpls="cd ~/app/utils/scripts"
+alias vi='mvim -v'
+alias vim='mvim -v'
+
+alias calebabc="cd /Volumes/sdcard/calebabc"
+alias mesh="cd ~/workspace/meshkorea"
+alias pms="cd ~/workspace/meshkorea/prime-main-server"
