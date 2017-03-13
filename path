@@ -16,6 +16,7 @@ export PLAY2_HOME=$HOME/app/activator-1.3.7
 export STORM_HOME=/usr/local/storm
 export BOXFUSE_HOME=$HOME/app/boxfuse
 export ctags_HOME=/usr/local/Celler/ctags/5.8.1/bin
+export PATH="$HOME/.composer/vendor/bin:$PATH" # laravel
 
 ### added by Anaconda3 4.2.0 installer
 export PATH="/Users/cdkkim/anaconda3/bin:$PATH"

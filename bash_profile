@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-
+#!/usr/bin/bash
 export PS1='\[\e[1;30m\]\w\[\e[0m\]\[\e[1;31m\]$(parse_git_branch)\[\e[0m\] \$ '
 export HOME=/Users/$(whoami)
 export WORKON_HOME="$HOME/.virtualenvs"
