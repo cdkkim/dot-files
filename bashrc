@@ -8,14 +8,19 @@ alias findd='find . -type d'
 alias l='ls -F'
 alias ls='ls -v'
 alias df='df -h'
-alias vi='mvim -v'
-alias vim='mvim -v'
+alias vi='vim'
+#alias vim='mvim -v'
 alias chrm="open -a 'Google Chrome'"
 alias tpls="cd ~/app/utils/scripts"
 alias lsdr="ls -d -- */"
 alias jcon="jupyter console"
 alias pms="cd ~/workspace/prime-main-server"
 alias ll="ls -al"
+
+# php shortcuts
+alias art="php artisan"
+alias tinker="php artisan tinker"
+alias unittest="./vendor/bin/phpunit"
 
 # docker shortcuts
 alias di="docker images"
@@ -28,6 +33,24 @@ alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
 
 complete -d cd
+
+# git shortcuts
+alias gs='echo ""; echo "*********************************************"; echo -e "   DO NOT FORGET TO PULL BEFORE COMMITTING"; echo "*********************************************"; echo ""; git status'
+alias ga='git add'
+alias gaa='git add --all'
+alias go='git checkout'
+alias gob='git checkout -b'
+alias gb='git branch'
+alias gc='git commit'
+alias gcm='git commit -m'
+alias glg='git log --graph --oneline --decorate --all'
+alias gld='git log --pretty=format:"%h %ad %s" --date=short --all --decorate'
+alias gm='git merge --no-ff'
+alias gsts='git stash show -p'
+# git log find by commit message
+function glf() { git log —all —grep="$1"; }
+function gg() { git branch | grep $1; }
+
 #------------------------------------------------------------------------------
 # tmux settings
 #------------------------------------------------------------------------------

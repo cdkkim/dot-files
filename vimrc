@@ -9,7 +9,6 @@ Plugin 'mattn/emmet-vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-rvm'
 
 " Syntax
 Plugin 'derekwyatt/vim-scala'
@@ -59,6 +58,7 @@ set viminfo+=!
 set showcmd
 set showmatch
 set nowrap
+set backspace=indent,eol,start
 set tabstop=2
 set softtabstop=2
 set expandtab
