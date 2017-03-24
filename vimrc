@@ -108,6 +108,9 @@ nnoremap k gk
 nnoremap gb :ls<CR>:b<Space>
 nnoremap <Leader>b :b
 
+" toggle highlight search
+nnoremap <leader>h :set !hlsearch
+
 " =============================================================
 "                 PLUGINS CONFIGURATION
 " =============================================================
