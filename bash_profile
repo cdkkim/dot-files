@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #export PS1='\[\e]0;\w\a\]\n\[\e[0;32m\]\u@\h: \[\e[1;30m\]\w\[\e[0m\]\[\e[1;31m\]$(parse_git_branch)\[\e[0m\]\n\$ '
-export PS1='\[\e[1;30m\]\w\[\e[0m\]\[\e[1;31m\]$(parse_git_branch)\[\e[0m\] \$ '
+export PS1='\[\e[1;30m\]\w\[\e[0m\]\[\e[0;32m\]$(parse_git_branch)\[\e[0m\] \$ '
 export HOME=/Users/$(whoami)
 
 
