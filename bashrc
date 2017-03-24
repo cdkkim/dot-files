@@ -42,6 +42,7 @@ alias gld='git log --pretty=format:"%h %ad %s" --date=short --all'
 alias gm='git merge --no-ff'
 # git log find by commit message
 function glf() { git log --all --grep="$1"; }
+function gg() { git branch | grep "$@" }
 
 # complete directory path
 complete -d cd
