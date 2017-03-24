@@ -175,4 +175,6 @@ let g:ycm_filetype_specific_completion_to_disable = {
 "autocmd BufEnter * if &ft !~ '^nerdtree$' | silent! lcd %:p:h | endif
 
 " Ag
-leg g:ackprg = 'ag --notroup --nocolor --column'
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif

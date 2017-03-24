@@ -2,15 +2,8 @@
 
 #export PS1='\[\e]0;\w\a\]\n\[\e[0;32m\]\u@\h: \[\e[1;30m\]\w\[\e[0m\]\[\e[1;31m\]$(parse_git_branch)\[\e[0m\]\n\$ '
 export PS1='\[\e[1;30m\]\w\[\e[0m\]\[\e[1;31m\]$(parse_git_branch)\[\e[0m\] \$ '
-export HOME=/Users/$(whomai)
+export HOME=/Users/$(whoami)
 
-export WORKON_HOME="$HOME/.virtualenvs"
-#source /usr/local/bin/virtualenvwrapper.sh 
-
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home
-#export ctags_HOME=/usr/local/Celler/ctags/5.8.1/bin
-
-export PATH="$PATH:/usr/local/Cellar/ruby/2.4.0/bin"
 
 export CC=clang
 export CXX=clang++
@@ -32,7 +25,7 @@ if [ -f ~/.bashrc ]; then
    source ~/.bashrc
 fi
 
-source ~/.functions
+source ~/dot-files/functions
 #------------------------------------------------------------------------------
 # For brew cask available options
 # @see. https://github.com/caskroom/homebrew-cask/blob/master/USAGE.md#options
@@ -57,6 +50,9 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 ### Added by the Heroku Toolbelt
 #export PATH="/usr/local/heroku/bin:$PATH"
+
+# Initialize Virtualenv
+#source /usr/local/bin/virtualenvwrapper.sh 
 
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8

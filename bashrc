@@ -12,6 +12,7 @@ alias lsdr="ls -d -- */"
 alias jcon="jupyter console"
 alias pms="cd ~/workspace/prime-main-server"
 alias ll="ls -al"
+alias vi="vim"
 
 # Navigation
 alias ..="cd .."
@@ -99,6 +100,8 @@ export PGDATA=/usr/local/var/postgres
 export PGHOST=localhost
 alias start-pg='pg_ctl -l $PGDATA/server.log start'
 alias stop-pg='pg_ctl stop -m fast'
+
+# PHPC/lI
 
 
 #------------------------------------------------------------------------------
