@@ -9,7 +9,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-rvm'
+Plugin 'tpope/vim-fugitive'
 
 " Syntax
 Plugin 'derekwyatt/vim-scala'
@@ -18,6 +18,7 @@ Plugin 'derekwyatt/vim-scala'
 
 " Navigation
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
 
 " Color themes
 Plugin 'chriskempson/vim-tomorrow-theme'
@@ -59,6 +60,7 @@ set viminfo+=!
 set showcmd
 set showmatch
 set nowrap
+set backspace=indent,eol,start
 set tabstop=2
 set softtabstop=2
 set expandtab
@@ -72,6 +74,7 @@ set autowrite
 set wrap
 set shell=bash
 set wildmenu
+"set autochdir " automatically set the current working directory
 "set paste " writes key map (e.g. ^L). blocks ultisnip
 "set backupdir=~/.tmp
 "set directory=~/.tmp
@@ -85,8 +88,8 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" ignore certain file for command-t
-set wildignore+=*.pyc
+" ignore certain file for ctrl-p
+set wildignore+=*.pyc,*/tmp/*,*.so,*.swp,*.zip 
 
 "let g:pymode_python = 'python3' "use python3
 
@@ -126,7 +129,7 @@ let g:user_emmet_leader_key='<C-e>'
 "usage: ctrl+e ,
 
 
-set tags=./tags,tags
+"set tags=./.git/tags,./.gittags
 " sort scala imports
 let g:scala_sort_across_gropus=1
 let g:scala_first_party_namespaces='\(controllers\|views\|models\|util\|de.\)'
@@ -144,7 +147,32 @@ let g:returnApp="iTerm"
 "let vimrplugin_applescript=0
 "let vimrplugin_vsplit=0
 
+
+" ctrl-p
+" Exclude files and directories
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ }
+" Ignore files in .gitignore
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+" When invoked, unless a starting directory is specified, 
+" CtrlP will set its local working directory according to this variable:
+" http://ctrlpvim.github.io/ctrlp.vim/#installation
+let g:ctrlp_working_path_mode = 'ra'
+nnoremap <leader>. :CtrlPTag<CR>
+
+
 " YCM
 let g:ycm_keep_logfiles = 1
 let g:ycm_log_level = 'debug'
+let g:ycm_filetype_specific_completion_to_disable = {
+  \ 'gitcommit': 1
+  \}
 
+" NerdTree 
+" fix NERTTree's root node
+"autocmd BufEnter * if &ft !~ '^nerdtree$' | silent! lcd %:p:h | endif
+
+" Ag
+leg g:ackprg = 'ag --notroup --nocolor --column'

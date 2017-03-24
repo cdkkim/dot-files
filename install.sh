@@ -11,3 +11,5 @@ for file in "${files[@]}"; do
 done;
 
 unset files file;
+
+vim +PluginInstall +qall
