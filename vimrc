@@ -129,7 +129,7 @@ let g:user_emmet_leader_key='<C-e>'
 "usage: ctrl+e ,
 
 
-"set tags=./.git/tags,./.gittags
+set tags=./tags,tags
 " sort scala imports
 let g:scala_sort_across_gropus=1
 let g:scala_first_party_namespaces='\(controllers\|views\|models\|util\|de.\)'

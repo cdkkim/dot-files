@@ -1,33 +1,50 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
-#------------------------------------------------------------------------------
-# alias
-#------------------------------------------------------------------------------
 alias findf='find . -type f'
 alias findd='find . -type d'
 alias l='ls -F'
+alias ll='ls -al'
 alias ls='ls -v'
 alias df='df -h'
-alias vi='mvim -v'
-alias vim='mvim -v'
+alias subl='sublime'
 alias chrm="open -a 'Google Chrome'"
-alias tpls="cd ~/app/utils/scripts"
 alias lsdr="ls -d -- */"
 alias jcon="jupyter console"
 alias pms="cd ~/workspace/prime-main-server"
 alias ll="ls -al"
 
-# docker shortcuts
-alias di="docker images"
-alias ds="docker ps"
-
+# Navigation
 alias ..="cd .."
 alias ..2="cd ../.."
 alias ..3="cd ../../.."
 alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
 
+# docker shortcuts
+alias di="docker images"
+alias ds="docker ps"
+
+#------------------------------------------------------------------------------
+# Git settings
+#------------------------------------------------------------------------------
+alias gs='echo ""; echo "*********************************************"; echo -e "   DO NOT FORGET TO PULL BEFORE COMMITTING"; echo "*********************************************"; echo ""; git status'
+alias go='git checkout'
+alias gb='git branch'
+alias gd='git diff'
+alias gc='git commit'
+alias gp='git pull'
+alias gk='gitk --all&'
+alias gx='gitk --all'
+alias gl='git log'
+alias glg='git log --graph --oneline --decorate --all'
+alias gld='git log --pretty=format:"%h %ad %s" --date=short --all'
+alias gm='git merge --no-ff'
+# git log find by commit message
+function glf() { git log --all --grep="$1"; }
+
+# complete directory path
 complete -d cd
+
 #------------------------------------------------------------------------------
 # tmux settings
 #------------------------------------------------------------------------------
@@ -35,14 +52,14 @@ complete -d cd
 alias tlist="tmux list-sessions"
 alias ta="tmux a -t "
 
-#SESSION_NAME="orhos"
+# tmux save session
+#SESSION_NAME=""
 #tmux has-session -t $SESSION_NAME &> /dev/null
 #if [$? != 0]
 #  then
 #    tmux new-session -s $SESSION_NAME -n script -d
 #    tmux send-keys -t $SESSION_NAME "~/bin/script" C-m
 #fi
-
 #tmux attach -t $SESSION_NAME
 
 #------------------------------------------------------------------------------
@@ -72,6 +89,7 @@ source ~/.aws/awscredentials
 #------------------------------------------------------------------------------
 # fasd settings
 #------------------------------------------------------------------------------
+# fasd
 eval "$(fasd --init auto)"
 alias v='fasd -f -e vim'
 alias j='fasd_cd -d'
