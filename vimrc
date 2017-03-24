@@ -17,7 +17,7 @@ Plugin 'derekwyatt/vim-scala'
 "Plugin 'jalvesaq/R-Vim-runtim'
 
 " Navigation
-Plugin 'wincent/command-t'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " Color themes
 Plugin 'chriskempson/vim-tomorrow-theme'
