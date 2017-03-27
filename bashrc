@@ -9,7 +9,6 @@ alias df='df -h'
 alias chrm="open -a 'Google Chrome'"
 alias lsdr="ls -d -- */"
 alias jcon="jupyter console"
-alias pms="cd ~/workspace/prime-main-server"
 alias ll="ls -al"
 alias vi="vim"
 
@@ -39,7 +38,7 @@ alias gl='git log'
 alias glg='git log --graph --oneline --decorate --all'
 alias gld='git log --pretty=format:"%h %ad %s" --date=short --all'
 alias gm='git merge --no-ff'
-alias gob='git checkout -b '
+alias gob='git checkout -b'
 # git log find by commit message
 function glf() { git log --all --grep="$1"; }
 function gg() { git branch | grep "$@"; }

@@ -30,7 +30,7 @@ filetype plugin indent on
 
 syntax enable
 colorscheme tomorrow-night
-au BufReadPost,BufNewFile *.java colorscheme hybrid
+au BufReadPost,BufNewFile *.java,*.php colorscheme purplish
 set t_Co=256
 let g:solarized_termcolors=256
 

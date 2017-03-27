@@ -4,7 +4,6 @@
 export PS1='\[\e[1;30m\]\w\[\e[0m\]\[\e[0;32m\]$(parse_git_branch)\[\e[0m\] \$ '
 export HOME=/Users/$(whoami)
 
-
 export CC=clang
 export CXX=clang++
 export LDFLAGS="-L/usr/local/lib"
@@ -26,6 +25,10 @@ if [ -f ~/.bashrc ]; then
 fi
 
 source ~/dot-files/functions
+source ~/dot-files/path
+source ~/dot-files/aliases
+source ~/dot-files/export
+
 #------------------------------------------------------------------------------
 # For brew cask available options
 # @see. https://github.com/caskroom/homebrew-cask/blob/master/USAGE.md#options

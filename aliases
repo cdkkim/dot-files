@@ -6,6 +6,7 @@ alias copyssh="pbcopy < $HOME/.ssh/id_rsa.pub"
 alias reloadcli="source $HOME/.zshrc"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias ll="$(brew --prefix coreutils)/libexec/gnubin/ls -ahlF --color --group-directories-first"
+alias pms="cd ~/workspace/prime-main-server"
 
 #-------------------------------------------------------------------------------
 # Recursively remove .DS_Store files
@@ -27,6 +28,7 @@ alias art="php artisan"
 alias artisan="php artisan"
 alias tinker="php artisan tinker"
 alias serve="php artisan serve"
+alias phptest="./vendor/bin/phpunit"
 
 #-------------------------------------------------------------------------------
 # Some more alias to avoid making mistakes:
