@@ -19,6 +19,7 @@ Plugin 'derekwyatt/vim-scala'
 " Navigation
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdtree'
 
 " Color themes
 Plugin 'chriskempson/vim-tomorrow-theme'
@@ -29,8 +30,10 @@ call vundle#end()
 filetype plugin indent on
 
 syntax enable
-colorscheme tomorrow-night
-au BufReadPost,BufNewFile *.java,*.php colorscheme purplish
+"colorscheme minimalist
+colorscheme purplish
+au BufReadPost,BufNewFile *.java colorscheme hybrid
+au BufReadPost,BufNewFile *.config,*.yaml,*.py colorscheme tomorrow-night
 set t_Co=256
 let g:solarized_termcolors=256
 
@@ -50,7 +53,7 @@ set so=7 "allow rooms
 set hlsearch
 set incsearch
 set ignorecase "make search case insensitive
-set smartcase
+"set smartcase
 "set autoindent
 set cindent
 set colorcolumn=+1
@@ -108,8 +111,14 @@ nnoremap k gk
 nnoremap gb :ls<CR>:b<Space>
 nnoremap <Leader>b :b
 
-" toggle highlight search
-nnoremap <leader>h :set !hlsearch
+" Toggle highlight search
+nnoremap <leader>h :set noh<CR>
+
+" Pane navigation
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " =============================================================
 "                 PLUGINS CONFIGURATION
@@ -181,3 +190,6 @@ let g:ycm_filetype_specific_completion_to_disable = {
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+" NERDTree
+nnoremap <leader>nt :NERDTreeToggle<CR>
