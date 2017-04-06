@@ -64,10 +64,10 @@ set showcmd
 set showmatch
 set nowrap
 set backspace=indent,eol,start
-set tabstop=2
-set softtabstop=2
+set tabstop=4
+set softtabstop=4
 set expandtab
-set shiftwidth=2
+set shiftwidth=4
 set foldlevel=2
 set number
 set relativenumber
@@ -92,10 +92,17 @@ set nowritebackup
 set noswapfile
 
 " ignore certain file for ctrl-p
-set wildignore+=*.pyc,*/tmp/*,*.so,*.swp,*.zip 
+set wildignore+=*.pyc,*/tmp/*,*.so,*.swp,*.zip
 
 "let g:pymode_python = 'python3' "use python3
-
+"
+" status line setting
+set statusline=%F%m%r%h%w\ 
+set statusline+=[%{strlen(&fenc)?&fenc:&enc}]
+set statusline+=%= " left/right separator
+set statusline+=%{fugitive#statusline()}\    
+set statusline+=\ [%l\/%L,%c] " cursor column, line/total
+set statusline+=\ %P\  " line percent
 
 " =============================================================
 "                      MAPPINGS
@@ -112,13 +119,15 @@ nnoremap gb :ls<CR>:b<Space>
 nnoremap <Leader>b :b
 
 " Toggle highlight search
-nnoremap <leader>h :set noh<CR>
+nnoremap <leader>h :set hls!<CR>
 
 " Pane navigation
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+
+nnoremap <leader>rw ciw<C-r>0<ESC>
 
 " =============================================================
 "                 PLUGINS CONFIGURATION
@@ -161,26 +170,38 @@ let g:returnApp="iTerm"
 
 
 " ctrl-p
+set wildignore+=*/public/*,*/storage/*
 " Exclude files and directories
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'file': '\v\.(exe|so|dll|js)$',
   \ }
 " Ignore files in .gitignore
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+"let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 " When invoked, unless a starting directory is specified, 
 " CtrlP will set its local working directory according to this variable:
 " http://ctrlpvim.github.io/ctrlp.vim/#installation
 let g:ctrlp_working_path_mode = 'ra'
 nnoremap <leader>. :CtrlPTag<CR>
 
+" hightlight ctrlp selection
+let g:ctrlp_buffer_func = { 'enter': 'BrightHighlightOn', 'exit':  'BrightHighlightOff', }
+function BrightHighlightOn()
+  hi CursorLine ctermfg=140
+endfunction
+function BrightHighlightOff()
+  hi CursorLine ctermfg=NONE
+endfunction
 
 " YCM
+nnoremap <leader>y :let g:ycm_auto_trigger=0<CR>
+nnoremap <leader>Y :let g:ycm_auto_trigger=1<CR>
 let g:ycm_keep_logfiles = 1
-let g:ycm_log_level = 'debug'
+let g:ycm_log_level = 'critical'
 let g:ycm_filetype_specific_completion_to_disable = {
   \ 'gitcommit': 1
   \}
+"let g:ycm_auto_trigger=0
 
 " NerdTree 
 " fix NERTTree's root node

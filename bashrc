@@ -34,14 +34,16 @@ alias gc='git commit'
 alias gp='git pull'
 alias gk='gitk --all&'
 alias gx='gitk --all'
-alias gl='git log'
+alias gl='git log --decorate'
 alias glg='git log --graph --oneline --decorate --all'
 alias gld='git log --pretty=format:"%h %ad %s" --date=short --all'
 alias gm='git merge --no-ff'
 alias gob='git checkout -b'
+alias gaa='git add --all'
 # git log find by commit message
 function glf() { git log --all --grep="$1"; }
 function gg() { git branch | grep "$@"; }
+export GIT_EDITOR=vim
 
 # complete directory path
 complete -d cd
