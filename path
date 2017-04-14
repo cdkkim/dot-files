@@ -41,7 +41,7 @@ PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="$PATH:$HOME/.rvm/bin"
 
 #-------------------------------------------------------------------------------
-# Load custom commands
+# Add Spark path
 #-------------------------------------------------------------------------------
 
-export PATH="$DOTFILES/bin:$PATH"
+export PATH="$PATH:/usr/local/Cellar/spark-2.1.0/bin"

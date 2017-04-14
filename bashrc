@@ -42,7 +42,14 @@ alias gob='git checkout -b'
 alias gaa='git add --all'
 # git log find by commit message
 function glf() { git log --all --grep="$1"; }
-function gg() { git branch | grep "$@"; }
+function gg() {
+    if [ $# -eq 0 ] # number of argument equals to 0
+    then
+        git branch
+    else
+        git branch | grep "$@";
+    fi
+}
 export GIT_EDITOR=vim
 
 # complete directory path

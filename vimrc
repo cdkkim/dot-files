@@ -15,6 +15,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'derekwyatt/vim-scala'
 "Plugin 'vim-scripts/Vim-R-plugin'
 "Plugin 'jalvesaq/R-Vim-runtim'
+Plugin 'stephpy/vim-php-cs-fixer'
 
 " Navigation
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -183,6 +184,8 @@ let g:ctrlp_custom_ignore = {
 " http://ctrlpvim.github.io/ctrlp.vim/#installation
 let g:ctrlp_working_path_mode = 'ra'
 nnoremap <leader>. :CtrlPTag<CR>
+let g:ctrlp_map='<c-p>'
+let g:ctrlp_cmd='CtrlPMRU'
 
 " hightlight ctrlp selection
 let g:ctrlp_buffer_func = { 'enter': 'BrightHighlightOn', 'exit':  'BrightHighlightOff', }
@@ -214,3 +217,10 @@ endif
 
 " NERDTree
 nnoremap <leader>nt :NERDTreeToggle<CR>
+
+" php-cs-fixer
+let g:php_cs_fixer_rules = "@PSR2"
+"let g:php_cs_fixer_config_file = '.php_cs'
+nnoremap <slient><leader>pcd :call PhpCsFixerFixDirectory()<CR>
+nnoremap <slient><leader>pcf :call PhpCsFixerFixFile()<CR>
+
