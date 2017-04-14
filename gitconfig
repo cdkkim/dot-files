@@ -1,0 +1,60 @@
+[user]
+	name = Kyeong Oh Kim
+	email = cdkkim08@gmail.com
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = auto
+
+[color "branch"]
+  current = white green bold
+  local = yellow
+  remote = yellow reverse
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = green
+  changed = yellow
+  untracked = cyan
+
+[alias]
+  st = status
+  cm = commit -m
+  co = checkout
+  cb = checkout -b
+  di = diff
+  dc = diff —cached
+  ds = diff —staged
+  aa = add —all
+  b = branch
+  pom = push origin master
+  hist = log —pretty=format:\"%h %ad | %s%d [%an]\" —graph —date=short
+  type = cat-file -t
+  dump = cat-file -p
+  tree = log --graph --full-history --all
+
+  unstage = reset HEAD          # un-add files from index (tracking)
+  uncpmmit = reset —soft HEAD^ # go back one commit, put changes into your working dir and index
+
+[format]
+  pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
+
+[merge]
+  tool = vimdiff
+  summary = true
+
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true

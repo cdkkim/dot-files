@@ -5,6 +5,7 @@ ln -s ~/dot-files/bashrc ~/.bashrc
 ln -s ~/dot-files/bash_profile ~/.bash_profile
 ln -s ~/dot-files/inputrc ~/.inputrc
 ln -s ~/dot-files/ctags ~/.ctags
+ln -s ~/dot-files/gitconfig ~/.gitconfig
 cp -rf ~/dot-files/vim ~/.vim
 
 export DOTFILES=~/dot-files
