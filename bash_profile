@@ -25,8 +25,8 @@ if [ -f ~/.bashrc ]; then
 fi
 
 source ~/dot-files/functions
-source ~/dot-files/path
-source ~/dot-files/aliases
+#source ~/dot-files/path
+#source ~/dot-files/aliases
 #source ~/dot-files/export
 
 #------------------------------------------------------------------------------

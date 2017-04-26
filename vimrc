@@ -16,6 +16,7 @@ Plugin 'derekwyatt/vim-scala'
 "Plugin 'vim-scripts/Vim-R-plugin'
 "Plugin 'jalvesaq/R-Vim-runtim'
 Plugin 'stephpy/vim-php-cs-fixer'
+Plugin 'vim-syntastic/syntastic'
 
 " Navigation
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -33,7 +34,7 @@ filetype plugin indent on
 syntax enable
 "colorscheme minimalist
 colorscheme purplish
-au BufReadPost,BufNewFile *.java colorscheme hybrid
+au BufReadPost,BufNewFile *.java colorscheme minimalist
 au BufReadPost,BufNewFile *.config,*.yaml,*.py colorscheme tomorrow-night
 set t_Co=256
 let g:solarized_termcolors=256
@@ -128,6 +129,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+" replace word with clipboard
 nnoremap <leader>rw ciw<C-r>0<ESC>
 
 " =============================================================
@@ -223,4 +225,15 @@ let g:php_cs_fixer_rules = "@PSR2"
 "let g:php_cs_fixer_config_file = '.php_cs'
 nnoremap <slient><leader>pcd :call PhpCsFixerFixDirectory()<CR>
 nnoremap <slient><leader>pcf :call PhpCsFixerFixFile()<CR>
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_php_checkers = ["php", "phpmd"]
 

@@ -26,7 +26,7 @@ alias ds="docker ps"
 #------------------------------------------------------------------------------
 # Git settings
 #------------------------------------------------------------------------------
-alias gs='echo ""; echo "*********************************************"; echo -e "   DO NOT FORGET TO PULL BEFORE COMMITTING"; echo "*********************************************"; echo ""; git status'
+alias gs='echo ""; echo "************************************************"; echo -e "   Do Not Forget To CLEAN COMMITS Before PUSH"; echo "************************************************"; echo ""; git status'
 alias go='git checkout'
 alias gb='git branch'
 alias gd='git diff'
@@ -50,6 +50,7 @@ function gg() {
         git branch | grep "$@";
     fi
 }
+function rebase() { git rebase -i HEAD~"$@"; }
 export GIT_EDITOR=vim
 
 # complete directory path
@@ -111,6 +112,15 @@ alias start-pg='pg_ctl -l $PGDATA/server.log start'
 alias stop-pg='pg_ctl stop -m fast'
 
 # PHPC/lI
+
+
+#------------------------------------------------------------------------------
+# local settings
+#------------------------------------------------------------------------------
+source ~/dot-files/functions
+source ~/dot-files/path
+source ~/dot-files/aliases
+#source ~/dot-files/export
 
 
 #------------------------------------------------------------------------------
