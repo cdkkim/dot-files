@@ -12,20 +12,23 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 
 " Syntax
+Plugin 'vim-syntastic/syntastic'
 Plugin 'derekwyatt/vim-scala'
 "Plugin 'vim-scripts/Vim-R-plugin'
 "Plugin 'jalvesaq/R-Vim-runtim'
+
+" PHP
 Plugin 'stephpy/vim-php-cs-fixer'
-Plugin 'vim-syntastic/syntastic'
+Plugin 'arnaud-lb/vim-php-namespace'
 
 " Navigation
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'craigemery/vim-autotag'
 
 " Color themes
 Plugin 'chriskempson/vim-tomorrow-theme'
-"Plugin 'altercation/vim-colors-solarized'
 Plugin 'w0ng/vim-hybrid'
 
 call vundle#end()
@@ -153,7 +156,7 @@ let g:user_emmet_leader_key='<C-e>'
 "usage: ctrl+e ,
 
 
-set tags=./tags,tags
+set tags+=tags,tags.vendors
 " sort scala imports
 let g:scala_sort_across_gropus=1
 let g:scala_first_party_namespaces='\(controllers\|views\|models\|util\|de.\)'
@@ -226,7 +229,7 @@ let g:php_cs_fixer_rules = "@PSR2"
 nnoremap <slient><leader>pcd :call PhpCsFixerFixDirectory()<CR>
 nnoremap <slient><leader>pcf :call PhpCsFixerFixFile()<CR>
 
-" syntastic
+" Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -237,3 +240,14 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_php_checkers = ["php", "phpmd"]
 
+" Autotag
+let g:autotagTagsFile = "tags"
+"let g:autoTagDisabled = 1
+
+" Auto import php
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
