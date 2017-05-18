@@ -26,6 +26,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'craigemery/vim-autotag'
+Plugin 'easymotion/vim-easymotion'
 
 " Color themes
 Plugin 'chriskempson/vim-tomorrow-theme'
@@ -114,7 +115,8 @@ set statusline+=\ %P\  " line percent
 " =============================================================
  
 " map ; to :
-nmap ; :
+nnoremap ; :
+nnoremap : ;
 
 nnoremap j gj
 nnoremap k gk
@@ -239,6 +241,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_php_checkers = ["php", "phpmd"]
+let g:syntastic_loc_list_height = 3
 
 " Autotag
 let g:autotagTagsFile = "tags"
@@ -251,3 +254,7 @@ function! IPhpInsertUse()
 endfunction
 autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
 autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+
+" Easymotion
+nmap s <Plug>(easymotion-overwin-f2)
+nmap <Leader>f <Plug>(easymotion-overwin-f)

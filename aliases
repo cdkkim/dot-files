@@ -29,6 +29,7 @@ alias artisan="php artisan"
 alias tinker="php artisan tinker"
 alias serve="php artisan serve"
 alias phptest="./vendor/bin/phpunit"
+alias phptestf="./vendor/bin/phpunit --filter"
 
 #-------------------------------------------------------------------------------
 # Some more alias to avoid making mistakes:
