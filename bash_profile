@@ -19,6 +19,7 @@ shopt -s cmdhist # bash enable history
 export CLICOLOR=1
 export LSCOLORS=fxExCxDxBxegedabagachx
 #export LSCOLORS=GxFxCxDxBxegedabagaced
+export GREP_OPTIONS='--color=auto'
 
 if [ -f ~/.bashrc ]; then
    source ~/.bashrc
