@@ -238,10 +238,15 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_php_checkers = ["php", "phpmd"]
+let g:syntastic_py_checkers = ["pylint", "python"]
 let g:syntastic_loc_list_height = 3
+let g:syntastic_quiet_messages = {
+    \ "!level":  "errors",
+    \ "type":    "style",
+\ }
 
 " Autotag
 let g:autotagTagsFile = "tags"
