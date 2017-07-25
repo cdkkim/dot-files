@@ -52,6 +52,7 @@ function gg() {
 }
 function rebase() { git rebase -i HEAD~"$@"; }
 export GIT_EDITOR=vim
+export GIT_PAGER='less -r' git dc
 
 # complete directory path
 complete -d cd
