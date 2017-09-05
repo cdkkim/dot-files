@@ -70,3 +70,5 @@ parse_git_branch() {
 
 # added by Anaconda3 4.3.1 installer
 export PATH="/Users/kyeongohkim/anaconda/bin:$PATH"
+
+source ~/dot-files/git-completion.bash
