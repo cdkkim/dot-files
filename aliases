@@ -5,8 +5,17 @@
 alias copyssh="pbcopy < $HOME/.ssh/id_rsa.pub"
 alias reloadcli="source $HOME/.zshrc"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
-alias ll="$(brew --prefix coreutils)/libexec/gnubin/ls -ahlF --color --group-directories-first"
+#alias ll="$(brew --prefix coreutils)/libexec/gnubin/ls -ahlF --color --group-directories-first"
+alias ll="ls -l"
 alias pms="cd ~/workspace/prime-main-server"
+alias vrr="cd ~/workspace/vroong-lastmile-server"
+alias mcp="cd ~/workspace/mesh-control-platform-api"
+
+# kibana shortcut
+alias tunnel.qa='ssh vroong.elk.qa -N'
+alias log.qa='open https://localhost:9500/_plugin/kibana'
+alias tunnel.prod='ssh vroong.elk.prod -N'
+alias log.prod='open https://localhost:9600/_plugin/kibana'
 
 #-------------------------------------------------------------------------------
 # Recursively remove .DS_Store files
@@ -28,7 +37,7 @@ alias art="php artisan"
 alias artisan="php artisan"
 alias tinker="php artisan tinker"
 alias serve="php artisan serve"
-alias phptest="./vendor/bin/phpunit"
+alias phptest="./vendor/bin/phpunit -d memory_limit=512M"
 alias phptestf="./vendor/bin/phpunit --filter"
 
 #-------------------------------------------------------------------------------

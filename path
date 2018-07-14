@@ -52,3 +52,10 @@ export PATH="$PATH:/usr/local/Cellar/scala-2.11.8/bin"
 
 export PATH="$PATH:/usr/local/Cellar/spark-2.1.1/bin"
 export SPARK_LOCAL_IP=127.0.0.1
+
+#-------------------------------------------------------------------------------
+# Add JAVA path
+#-------------------------------------------------------------------------------
+
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export PATH=${JAVA_HOME}/bin:$PATH

@@ -26,7 +26,7 @@ alias ds="docker ps"
 #------------------------------------------------------------------------------
 # Git settings
 #------------------------------------------------------------------------------
-alias gs='echo ""; echo "************************************************"; echo -e "   Do Not Forget To CLEAN COMMITS Before PUSH"; echo "************************************************"; echo ""; git status'
+alias gs='echo ""; echo "************************************************"; echo -e "   PULL PULL PULL PULL PULL PULL PULL"; echo "************************************************"; echo ""; git status'
 alias go='git checkout'
 alias gb='git branch'
 alias gd='git diff'
@@ -35,6 +35,10 @@ alias gp='git pull'
 alias gk='gitk --all&'
 alias gx='gitk --all'
 alias gl='git log --decorate'
+alias glh='git log | head'
+alias gr1='git rebase -i HEAD^'
+alias gr2='git rebase -i HEAD~2'
+alias gr3='git rebase -i HEAD~3'
 alias glg='git log --graph --pretty=oneline --abbrev-commit'
 alias gld='git log --pretty=format:"%h %ad %s" --date=short --all'
 alias gm='git merge --no-ff'

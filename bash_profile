@@ -72,3 +72,5 @@ parse_git_branch() {
 export PATH="/Users/kyeongohkim/anaconda/bin:$PATH"
 
 source ~/dot-files/git-completion.bash
+
+GRADLE_OPTS="-Djasypt.encryptor.password=qnfmdqnfmd!!"
