@@ -11,6 +11,9 @@ alias pms="cd ~/workspace/prime-main-server"
 alias vrr="cd ~/workspace/vroong-lastmile-server"
 alias mcp="cd ~/workspace/mesh-control-platform-api"
 
+alias gip="git push origin head"
+alias gipf="git push origin head --force"
+
 # kibana shortcut
 alias tunnel.qa='ssh vroong.elk.qa -N'
 alias log.qa='open https://localhost:9500/_plugin/kibana'

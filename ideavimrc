@@ -1,0 +1,9 @@
+
+set clipboard=unnamed
+set so=7
+
+nnoremap ; :
+nnoremap : ;
+
+" replace word with clipboard
+nnoremap <leader>rw ciw<C-r>0<ESC>
