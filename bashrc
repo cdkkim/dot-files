@@ -134,3 +134,4 @@ source ~/dot-files/aliases
 function cdmkdir () { mkdir -p "$@" && eval cd "\"\$$\""; }
 function cdd () { cd "$@" && ls; }
 
+source <(kubectl completion bash)

@@ -74,3 +74,9 @@ export PATH="/Users/kyeongohkim/anaconda/bin:$PATH"
 source ~/dot-files/git-completion.bash
 
 GRADLE_OPTS="-Djasypt.encryptor.password=qnfmdqnfmd!!"
+
+# eksctl
+export PATH=$HOME/bin:$PATH
+
+# bash-completion
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"

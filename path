@@ -66,3 +66,4 @@ export PATH=${JAVA_HOME}/bin:$PATH
 
 export GRADLE_HOME=/usr/local/opt/gradle/libexec/
 export PATH=${GRADLE_HOME}/bin:$PATH
+export PATH=$HOME/bin:$PATH
