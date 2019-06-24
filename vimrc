@@ -70,10 +70,13 @@ set showcmd
 set showmatch
 set nowrap
 set backspace=indent,eol,start
+
+set smartindent
 set tabstop=4
 set softtabstop=4
 set expandtab
 set shiftwidth=4
+
 set foldlevel=2
 set number
 set relativenumber
@@ -236,12 +239,13 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:syntastic_mode_map = {'mode': 'passive', 'active_filetypes': [],'passive_filetypes': []}
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_php_checkers = ["php", "phpmd"]
-let g:syntastic_py_checkers = ["pylint", "python"]
+"let g:syntastic_py_checkers = ["pylint", "python"]
 let g:syntastic_loc_list_height = 3
 let g:syntastic_quiet_messages = {
     \ "!level":  "errors",
