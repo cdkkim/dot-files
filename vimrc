@@ -5,18 +5,29 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
+
 Plugin 'mattn/emmet-vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
 
 " Syntax
 Plugin 'derekwyatt/vim-scala'
 "Plugin 'vim-scripts/Vim-R-plugin'
 "Plugin 'jalvesaq/R-Vim-runtim'
+"Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'arnaud-lb/vim-php-namespace'
+
+" Debugging
+Plugin 'joonty/vdebug'
 
 " Navigation
-Plugin 'wincent/command-t'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'scrooloose/nerdtree'
 
 " Color themes
 Plugin 'chriskempson/vim-tomorrow-theme'
@@ -27,10 +38,14 @@ call vundle#end()
 filetype plugin indent on
 
 syntax enable
-colorscheme tomorrow-night
-au BufReadPost,BufNewFile *.java colorscheme hybrid
+colorscheme purplish
+"colorscheme Tomorrow-night
+au BufReadPost,BufNewFile *.java colorscheme Tomorrow-night
 set t_Co=256
-let g:solarized_termcolors=256
+"color base16-tomorrow-night
+"let g:solarized_termcolors=256
+" highlight parenthesis
+highligh MatchParen cterm=bold ctermbg=none ctermfg=green
 
 " change cursor in insert mode
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -58,10 +73,10 @@ set viminfo+=!
 set showcmd
 set showmatch
 set nowrap
-set tabstop=2
-set softtabstop=2
+set tabstop=4
+set softtabstop=4
 set expandtab
-set shiftwidth=2
+set shiftwidth=4
 set foldlevel=2
 set number
 set relativenumber
@@ -75,6 +90,7 @@ set wildmenu
 "set backupdir=~/.tmp
 "set directory=~/.tmp
 "set guioptions-=T "remove toolbar
+set ttyfast " enable fast-terminal
 
 set enc=UTF-8
 set fileencodings=UTF-8
@@ -89,6 +105,13 @@ set wildignore+=*.pyc
 
 "let g:pymode_python = 'python3' "use python3
 
+" status line setting
+set statusline=%F%m%r%h%w\ 
+set statusline+=[%{strlen(&fenc)?&fenc:&enc}]
+set statusline+=%= " left/right separator
+set statusline+=%{fugitive#statusline()}\    
+set statusline+=\ [%l\/%L,%c] " cursor column, line/total
+set statusline+=\ %P\  " line percent
 
 " =============================================================
 "                      MAPPINGS
@@ -110,18 +133,22 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-map <F3> :set hlsearch!<CR>
+" toggle highlight search toggle
+noremap <leader>h :noh<CR>
 
+noremap <leader>ex :Explore<CR>
+
+nnoremap <leader>rw ciw<C-r>0<ESC>
 " =============================================================
 "                 PLUGINS CONFIGURATION
 " =============================================================
 
 " UltiSnips configuration
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<c-l>"
+"let g:UltiSnipsExpandTrigger="<c-l>"
 " If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
+"let g:UltiSnipsEditSplit="vertical"
+"let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 "inoremap <c-l> <c-r>=UltiSnips#ExpandSnippet()<cr>
 
 
@@ -132,6 +159,18 @@ let g:user_emmet_leader_key='<C-e>'
 "imap <C-e> :call emmet#expandAbbr(3,"")
 "usage: ctrl+e ,
 
+
+" Ctrl-p
+nnoremap <leader>. :CtrlPTag<CR>
+let g:ctrlp_buffer_func = { 'enter': 'BrightHighlightOn', 'exit':  'BrightHighlightOff', }
+
+function BrightHighlightOn()
+  hi CursorLine ctermfg=140
+endfunction
+
+function BrightHighlightOff()
+  hi CursorLine ctermfg=NONE
+endfunction
 
 set tags=./tags,tags
 " sort scala imports
@@ -152,5 +191,42 @@ let g:returnApp="iTerm"
 "let vimrplugin_vsplit=0
 
 " YCM
-let g:ycm_keep_logfiles = 1
-let g:ycm_log_level = 'debug'
+"let g:ycm_keep_logfiles = 1
+"let g:ycm_log_level = 'debug'
+let g:enable_ycm_at_startup = 0
+
+" Ack
+" Open a new tab and search 
+nmap <leader>a :tab split<CR>:Ack ""<Left>
+" Immediately search for the word under the cursor in a new tab.
+nmap <leader>A :tab split<CR>:Ack <C-R><C-W><CR>
+
+
+let g:vdebug_options = {
+        \ 'break_on_open' : 1,
+        \ 'server': '172.17.0.2',
+        \ 'path_maps': { '/var/www/html' : '/Users/cdkkim/workspace/meshkorea/prime-main-server' },
+        \ 'watch_window_style': 'compact'
+        \}
+"let g:vdebug_options['path_maps'] = {'/var/www/html' : '/Users/cdkkim/workspace/meshkorea/prime-main-server'}
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_loc_list_height = 3
+"let g:syntastic_disabled_filetypes=['python']
+let g:syntastic_mode_map = { 'mode': 'passive' }
+
+"let g:syntastic_php_checkers = ['phpmd', 'php']
+"let g:syntastic_py_checkers = ['pylint', 'python']
+
+" easymotion
+nmap s <Plug>(easymotion-overwin-f2)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+map <leader>nt :NERDTreeToggle<CR>
+

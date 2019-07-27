@@ -11,3 +11,7 @@ alias vim='mvim -v'
 alias calebabc="cd /Volumes/sdcard/calebabc"
 alias mesh="cd ~/workspace/meshkorea"
 alias pms="cd ~/workspace/meshkorea/prime-main-server"
+alias vrr="cd ~/workspace/meshkorea/vroong-lastmile-server"
+
+alias dev1order="kubectl port-forward svc/order-mysql -n vroong 9904:3306"
+alias dev1naverchannel="kubectl port-forward svc/naverchannel-mysql -n vroong 9907:3306"

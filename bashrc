@@ -6,14 +6,13 @@ alias l='ls -F'
 alias ll='ls -al'
 alias ls='ls -v'
 alias df='df -h'
-alias subl='sublime'
 alias chrm="open -a 'Google Chrome'"
 alias lsdr="ls -d -- */"
 alias jcon="jupyter console"
 
 # git shortcuts
 alias gs='echo ""; echo "*********************************************"; echo -e "   DO NOT FORGET TO PULL BEFORE COMMITTING"; echo "*********************************************"; echo ""; git status'
-alias go='git checkout'
+#alias go='git checkout'
 alias gb='git branch'
 alias gd='git diff'
 alias gc='git commit'
@@ -81,3 +80,6 @@ alias ct="ctags -R -f ./.git/tags ."
 
 # The next line enables bash completion for gcloud.
 #source $HOME/google-cloud-sdk/completion.bash.inc
+
+export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
