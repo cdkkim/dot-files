@@ -5,28 +5,28 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'mattn/emmet-vim'
+"Plugin 'mattn/emmet-vim'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'SirVer/ultisnips'
-Plugin 'tpope/vim-surround'
+"Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 
 " Syntax
-Plugin 'vim-syntastic/syntastic'
-Plugin 'derekwyatt/vim-scala'
+"Plugin 'vim-syntastic/syntastic'
+"Plugin 'derekwyatt/vim-scala'
 "Plugin 'vim-scripts/Vim-R-plugin'
 "Plugin 'jalvesaq/R-Vim-runtim'
 
 " PHP
-Plugin 'stephpy/vim-php-cs-fixer'
-Plugin 'arnaud-lb/vim-php-namespace'
+"Plugin 'stephpy/vim-php-cs-fixer'
+"Plugin 'arnaud-lb/vim-php-namespace'
 
 " Navigation
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'scrooloose/nerdtree'
+"Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'mileszs/ack.vim'
+"Plugin 'scrooloose/nerdtree'
 "Plugin 'craigemery/vim-autotag'
-Plugin 'easymotion/vim-easymotion'
+"Plugin 'easymotion/vim-easymotion'
 
 " Color themes
 Plugin 'chriskempson/vim-tomorrow-theme'
@@ -109,7 +109,7 @@ set wildignore+=*.pyc,*/tmp/*,*.so,*.swp,*.zip
 set statusline=%F%m%r%h%w\ 
 set statusline+=[%{strlen(&fenc)?&fenc:&enc}]
 set statusline+=%= " left/right separator
-set statusline+=%{fugitive#statusline()}\    
+"set statusline+=%{fugitive#statusline()}\    
 set statusline+=\ [%l\/%L,%c] " cursor column, line/total
 set statusline+=\ %P\  " line percent
 
@@ -235,9 +235,9 @@ nnoremap <slient><leader>pcd :call PhpCsFixerFixDirectory()<CR>
 nnoremap <slient><leader>pcf :call PhpCsFixerFixFile()<CR>
 
 " Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 let g:syntastic_mode_map = {'mode': 'passive', 'active_filetypes': [],'passive_filetypes': []}
 let g:syntastic_always_populate_loc_list = 1
@@ -267,3 +267,6 @@ autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 " Easymotion
 nmap s <Plug>(easymotion-overwin-f2)
 nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+vmap '' :w !pbcopy<CR><CR>
+
