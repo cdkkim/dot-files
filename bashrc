@@ -26,7 +26,7 @@ alias ds="docker ps"
 #------------------------------------------------------------------------------
 # Git settings
 #------------------------------------------------------------------------------
-alias gs='echo ""; echo "************************************************"; echo -e "   PULL PULL PULL PULL PULL PULL PULL"; echo "************************************************"; echo ""; git status'
+alias gs='git status'
 alias go='git checkout'
 alias gb='git branch'
 alias gd='git diff'

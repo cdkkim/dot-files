@@ -2,4 +2,3 @@
 --exclude=.git
 --exclude=log
 --languages=-javascript,sql
---append
