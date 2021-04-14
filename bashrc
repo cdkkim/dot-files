@@ -83,3 +83,20 @@ alias ct="ctags -R -f ./.git/tags ."
 
 export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+source <(kubectl completion bash)
+
+# https://github.com/openai/mujoco-py
+export PATH="/usr/local/Cellar/llvm/9.0.0_1/bin:$PATH"
+
+export CC="/usr/local/Cellar/llvm/9.0.0_1/bin/clang"
+export CXX="/usr/local/Cellar/llvm/9.0.0_1/bin/clang++"
+export CXX11="/usr/local/Cellar/llvm/9.0.0_1/bin/clang++"
+export CXX14="/usr/local/Cellar/llvm/9.0.0_1/bin/clang++"
+export CXX17="/usr/local/Cellar/llvm/9.0.0_1/bin/clang++"
+export CXX1X="/usr/local/Cellar/llvm/9.0.0_1/bin/clang++"
+
+export LDFLAGS="-L/usr/local/Cellar/llvm/9.0.0_1/lib"
+export CPPFLAGS="-I/usr/local/Cellar/llvm/9.0.0_1/include"
+export DYLD_FALLBACK_LIBRARY_PATH=/usr/lib:$DYLD_FALLBACK_LIBRARY_PATH
+
+export LC_ALL="en_US.UTF-8"

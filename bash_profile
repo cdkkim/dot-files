@@ -14,7 +14,8 @@ shopt -s cmdhist # bash enable history
 #export LC_ALL=en_US.UTF-8
 
 export LANGUAGE=ko_KR.UTF-8
-export LANG=ko_KR.UTF-8
+#export LANG=ko_KR.UTF-8
+export LANG=en_US.UTF-8
 export LC_ALL=ko_KR.UTF-8
 
 parse_git_branch() { 
@@ -38,3 +39,10 @@ fi
 # The original version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
 export PATH
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/opt/openldap/bin:$PATH"
+export PATH="/usr/local/opt/openldap/sbin:$PATH"
+export PATH="/usr/local/opt/curl/bin:$PATH"

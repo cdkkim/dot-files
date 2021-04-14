@@ -18,13 +18,16 @@ export STORM_HOME=/usr/local/storm
 export BOXFUSE_HOME=$HOME/app/boxfuse
 export ctags_HOME=/usr/local/Celler/ctags/5.8.1/bin
 export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
+export AIRFLOW_HOME=/Users/cdkkim/workspace/playground/airflow
+export FLUTTER_HOME=/Users/cdkkim/development/flutter
+export ANDROID_HOME=/Users/cdkkim/Library/Android
 
 export PATH="$HOME/.composer/vendor/bin:$PATH" # laravel
 
 ### added by Anaconda3 4.2.0 installer
 export PATH="/Users/cdkkim/anaconda3/bin:$PATH"
 
-PATH=$POSTGRES_HOME/bin:$RABBITMQ_HOME/sbin:/usr/local/bin:/usr/bin:/usr/local/sbin:$M2:$JAVA_HOME/bin:$MAHOUT_HOME/bin:$SCALA_HOME/bin:$JULIA_DIR/bin:$SPARK_HOME/bin:$STORM_HOME/bin:$GRADLE_HOME/bin:$PLAY2_HOME:$BOXFUSE_HOME:$ctags_HOME:$PATH
+PATH=$POSTGRES_HOME/bin:$RABBITMQ_HOME/sbin:/usr/local/bin:/usr/bin:/usr/local/sbin:$M2:$JAVA_HOME/bin:$MAHOUT_HOME/bin:$SCALA_HOME/bin:$JULIA_DIR/bin:$SPARK_HOME/bin:$STORM_HOME/bin:$GRADLE_HOME/bin:$PLAY2_HOME:$BOXFUSE_HOME:$ctags_HOME:$FLUTTER_HOME/bin:$PATH
 
 CDPATH=.:~:~/app:~/Documents/exercise:/Volumes/sdcard:~/app/utils/scripts
 
