@@ -15,3 +15,6 @@ zstyle ':vcs_info:*' enable git
 
 PROMPT='%~%F{green}$(parse_git_branch)%f '
 #RPROMPT='%*'
+
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
