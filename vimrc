@@ -6,20 +6,12 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 "Plugin 'mattn/emmet-vim'
-"Plugin 'Valloric/YouCompleteMe'
 "Plugin 'SirVer/ultisnips'
 "Plugin 'tpope/vim-surround'
 "Plugin 'tpope/vim-fugitive'
 
 " Syntax
 "Plugin 'vim-syntastic/syntastic'
-"Plugin 'derekwyatt/vim-scala'
-"Plugin 'vim-scripts/Vim-R-plugin'
-"Plugin 'jalvesaq/R-Vim-runtim'
-
-" PHP
-"Plugin 'stephpy/vim-php-cs-fixer'
-"Plugin 'arnaud-lb/vim-php-namespace'
 
 " Navigation
 "Plugin 'ctrlpvim/ctrlp.vim'
@@ -29,15 +21,15 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'easymotion/vim-easymotion'
 
 " Color themes
-Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'chriskempson/base16-vim'
 Plugin 'w0ng/vim-hybrid'
 
 call vundle#end()
 filetype plugin indent on
 
 syntax enable
-"colorscheme minimalist
-colorscheme purplish
+colorscheme tomorrow-night
+"colorscheme purplish
 au BufReadPost,BufNewFile *.java colorscheme minimalist
 au BufReadPost,BufNewFile *.config,*.yaml,*.py colorscheme tomorrow-night
 set t_Co=256

@@ -18,3 +18,6 @@ PROMPT='%~%F{green}$(parse_git_branch)%f '
 
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
+
+PATH=/opt/homebrew/bin:`pwd`/development/flutter/bin:$PATH
+eval "$(~/.rbenv/bin/rbenv init - zsh)"
