@@ -14,6 +14,7 @@ ln -s ~/dot-files/inputrc ~/.inputrc
 #ln -s ~/dot-files/ctags ~/.ctags
 ln -s ~/dot-files/gitconfig ~/.gitconfig
 cp -rf ~/dot-files/vim ~/.vim
+cp -rf ~/dot-files/ideavimrc ~/.ideavimrc
 
 export DOTFILES=~/dot-files
 files=("$DOTFILES/functions" "$DOTFILES/extra");
