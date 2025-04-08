@@ -21,3 +21,23 @@ bindkey "^[[B" history-beginning-search-forward
 
 PATH=/opt/homebrew/bin:`pwd`/development/flutter/bin:$PATH
 eval "$(~/.rbenv/bin/rbenv init - zsh)"
+eval "$(~/.rbenv/bin/rbenv init - zsh)"
+
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+# pnpm
+export PNPM_HOME="/Users/kyeongohkim/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export SAM_CLI_TELEMETRY=0
+
+# grep color
+export GREP_OPTIONS='--color=always'
+export GREP_COLOR='1;35;40'
+
+# aider
+export PATH="/Users/kyeongohkim/.local/bin:$PATH"

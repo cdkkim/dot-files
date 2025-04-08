@@ -78,9 +78,9 @@ export GIT_PAGER='less -r' git dc
 # fasd settings
 #------------------------------------------------------------------------------
 # fasd
-eval "$(fasd --init auto)"
-alias v='fasd -f -e vim'
-alias j='fasd_cd -d'
+#eval "$(fasd --init auto)"
+#alias v='fasd -f -e vim'
+#alias j='fasd_cd -d'
 
 #------------------------------------------------------------------------------
 # local settings
